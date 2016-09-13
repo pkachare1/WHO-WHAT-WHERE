@@ -1,0 +1,26 @@
+{
+  "name": "WhoWhatWhere",
+  "version": "1.0.0",
+  "description": "applicationDetails",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pragati Kachare",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.11.4",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^2.0.0",
+    "node-yelp": "0.0.3",
+    "require": "^2.4.20",
+    "yelp": "^1.0.1",
+    "angular-cookies": "^1.4.8",
+    "angular-ui-router": "0.2.15",
+    "lodash": "3.10.1",
+    "dodge": "^0.6.2"
+  }
+
+}

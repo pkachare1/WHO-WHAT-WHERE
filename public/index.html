@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="WhoWhatWhere">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Search Location</title>
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-ui-router.min.js"></script>
+    <script src="lib/angular/angular-route.js"></script>
+    <script src="lib/angular/angular-route.min.js"></script>
+    <script src="lib/lodash/lodash.min.js"></script>
+    <script src="lib/ng-map.min.js"></script>
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--Style sheet file for levelButtons page of game -->
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <script src="js/route.js"></script>
+    <script src="js/controllers/viewDataController.js"></script>
+</head>
+
+<body class="bgColor" ng-controller="viewDataController">
+<div class="row" id="first-row">
+    <header>
+        <div class="col-md-6">
+            <h1>Who What Where</h1>
+        </div>
+        <div class="col-md-6">
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" required
+                           class="form-control" ng-model="getItems" placeholder="Search by Item"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" required
+                           class="form-control" ng-model="getCity" placeholder="Search by City"/>
+                </div>
+                <button class="button" value="Search" ng-click="clickItem($event)">Search</button>
+            </form>
+        </div>
+        <div class="col-md-9 col-md-offset-3 centered-pills">
+            <ul class="nav nav-pills">
+                <li><a id="#home" ui-sref="home" ng-click="menuClick($event)">Home</a></li>
+                <li><a id="#food" ui-sref="data" ng-click="menuClick($event)">Food</a></li>
+                <li><a id="#fun" ui-sref="data" ng-click="menuClick($event)">Fun</a></li>
+                <li><a id="#nightLife" ui-sref="data" ng-click="menuClick($event)">NightLife</a></li>
+                <li><a id="#Coffee" ui-sref="data" ng-click="menuClick($event)">Coffee</a></li>
+            </ul>
+        </div>
+    </header>
+</div>
+
+<div ui-view></div>
+</body>
+</html>
+
+
+
+

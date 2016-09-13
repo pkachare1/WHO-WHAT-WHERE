@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-md-4">
+        <div class="displayList">
+            <div class="infoList row" ng-repeat="list in responseData">
+                <div class="pull-left col-md-4">
+                    <img class="image img-responsive" ng-src="{{list.image}}" draggable="false"
+                         ondragstart="return false;"/>
+                </div>
+                <div class="col-md-8">
+                    <div class="name"><a target="_blank" href="{{list.url}}">{{list.name}}</a></div>
+                    <div class="address" ng-repeat="add in list.address track by $index">{{add}}</div>
+                    <div class="phoneNo">{{list.phoneNo}}</div>
+                    <div class="ratingScale">{{list.rating}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div map-lazy-load="https://maps.google.com/maps/api/js">
+            <ng-map class="displayMap" center="{{responseData[0].lat}},{{responseData[0].lan}}" zoom="12">
+                <info-window id="displayInfo">
+                    <div ng-non-bindable>
+                        <div class="name"><a target="_blank" href="{{cityName.url}}">{{cityName.name}}</a></div>
+                        <div class="address" ng-repeat="add in cityName.address track by $index">{{add}}</div>
+                    </div>
+                </info-window>
+                <marker ng-repeat="showMarker in responseData" position="[{{showMarker.lat}},{{showMarker.lan}}]"
+                        title="{{showMarker.name}}" icon="{{icon}}" on-click="searchCity(event,showMarker)">
+                </marker>
+            </ng-map>
+        </div>
+    </div>
+</div>
+
